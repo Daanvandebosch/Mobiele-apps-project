@@ -6,12 +6,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TestProjectMobiele
 {
-    public class Klas
+    public class School
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int KlasID { get; set; }
-        public string KlasCode { get; set; }
-        public string KlasNaam { get; set; }
+        public int SchoolID { get; set; }
+        public string SchoolNaam { get; set; }
     }
 }
