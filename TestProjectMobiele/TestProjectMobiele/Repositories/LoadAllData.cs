@@ -16,37 +16,37 @@ namespace TestProjectMobiele
 
         public async Task<List<Foto>> LoadFotos()
         {
-            return await dbContext.Fotos.ToListAsync();
+            return await dbContext.tblfoto.ToListAsync();
         }
 
         public async Task<List<Gezin>> LoadGezinnen()
         {
-            return await dbContext.Gezinnen.ToListAsync();
+            return await dbContext.tblgezin.ToListAsync();
         }
 
         public async Task<List<Hoek>> LoadHoeken()
         {
-            return await dbContext.Hoekken.ToListAsync();
+            return await dbContext.tblhoek.ToListAsync();
         }
 
         public async Task<List<Klas>> LoadKlassen()
         {
-            return await dbContext.Klassen.ToListAsync();
+            return await dbContext.tblklas.ToListAsync();
         }
 
         public async Task<List<Kleuter>> LoadKleuters()
         {
-            return await dbContext.Kleuters.ToListAsync();
+            return await dbContext.tblkleuter.ToListAsync();
         }
 
         public async Task<List<Leerkracht>> LoadLeerkrachten()
         {
-            return await dbContext.Leerkrachten.ToListAsync();
+            return await dbContext.tblleerkracht.ToListAsync();
         }
 
         public async Task<List<School>> LoadScholen()
         {
-            return await dbContext.Scholen.ToListAsync();
+            return await dbContext.tblschool.ToListAsync();
         }
     }
 }

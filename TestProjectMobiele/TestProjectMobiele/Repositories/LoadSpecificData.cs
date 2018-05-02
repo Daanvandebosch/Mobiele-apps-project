@@ -16,37 +16,37 @@ namespace TestProjectMobiele.Repositories
 
         public async Task<Foto> LoadFotos(int FotoID)
         {
-            return await dbContext.Fotos.SingleAsync(item => item.FotoID == FotoID);
+            return await dbContext.tblfoto.SingleAsync(item => item.FotoID == FotoID);
         }
 
         public async Task<Gezin> LoadGezinnen(int GezinsID)
         {
-            return await dbContext.Gezinnen.SingleAsync(item => item.GezinsID == GezinsID);
+            return await dbContext.tblgezin.SingleAsync(item => item.GezinsID == GezinsID);
         }
 
         public async Task<Hoek> LoadHoeken(int HoekID)
         {
-            return await dbContext.Hoekken.SingleAsync(item => item.HoekID == HoekID);
+            return await dbContext.tblhoek.SingleAsync(item => item.HoekID == HoekID);
         }
 
         public async Task<Klas> LoadKlassen(int KlasID)
         {
-            return await dbContext.Klassen.SingleAsync(item => item.KlasID == KlasID);
+            return await dbContext.tblklas.SingleAsync(item => item.KlasID == KlasID);
         }
 
         public async Task<Kleuter> LoadKleuters(int KleuterID)
         {
-            return await dbContext.Kleuters.SingleAsync(item => item.KleuterID == KleuterID);
+            return await dbContext.tblkleuter.SingleAsync(item => item.KleuterID == KleuterID);
         }
 
         public async Task<Leerkracht> LoadLeerkrachten(string LeerkrachtCode)
         {
-            return await dbContext.Leerkrachten.SingleAsync(item => item.LeerkrachtCode == LeerkrachtCode);
+            return await dbContext.tblleerkracht.SingleAsync(item => item.LeerkrachtCode == LeerkrachtCode);
         }
 
         public async Task<School> LoadScholen(int SchoolID)
         {
-            return await dbContext.Scholen.SingleAsync(item => item.SchoolID == SchoolID);
+            return await dbContext.tblschool.SingleAsync(item => item.SchoolID == SchoolID);
         }
     }
 }

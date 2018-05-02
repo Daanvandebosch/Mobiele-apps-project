@@ -6,13 +6,13 @@ namespace TestProjectMobiele
 {
     public interface IDataConnection
     {
-        DbSet<Foto> Fotos { get; set; }
-        DbSet<Gezin> Gezinnen { get; set; }
-        DbSet<Hoek> Hoekken { get; set; }
-        DbSet<Klas> Klassen { get; set; }
-        DbSet<Kleuter> Kleuters { get; set; }
-        DbSet<Leerkracht> Leerkrachten { get; set; }
-        DbSet<School> Scholen { get; set; }
+        DbSet<Foto> tblfoto { get; set; }
+        DbSet<Gezin> tblgezin { get; set; }
+        DbSet<Hoek> tblhoek { get; set; }
+        DbSet<Klas> tblklas { get; set; }
+        DbSet<Kleuter> tblkleuter { get; set; }
+        DbSet<Leerkracht> tblleerkracht { get; set; }
+        DbSet<School> tblschool { get; set; }
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken));
     }

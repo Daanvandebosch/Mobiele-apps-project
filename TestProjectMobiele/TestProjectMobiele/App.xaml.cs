@@ -5,6 +5,7 @@ using TestProjectMobiele.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Prism.Unity;
+using TestProjectMobieles.Data;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace TestProjectMobiele
@@ -35,6 +36,7 @@ namespace TestProjectMobiele
             containerRegistry.RegisterForNavigation<FotosKleutersPage>();
             containerRegistry.RegisterForNavigation<OudersMainPage>();
             containerRegistry.RegisterForNavigation<TimelinePage>();
+            containerRegistry.RegisterInstance<IDataConnection>(new DataConnection("Data Source=daanvandebosch.database.windows.net;Initial Catalog=MobieleApps;User ID=r0664592;Password=Bobeke007"));
         }
     }
 }

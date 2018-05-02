@@ -1,17 +1,18 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
 using TestProjectMobiele;
 
 namespace TestProjectMobieles.Data
 {
     public class DataConnection : DbContext, IDataConnection
     {
-        public DbSet<Foto> Fotos { get; set; }
-        public DbSet<Gezin> Gezinnen { get; set; }
-        public DbSet<Hoek> Hoekken { get; set; }
-        public DbSet<Klas> Klassen { get; set; }
-        public DbSet<Kleuter> Kleuters { get; set; }
-        public DbSet<Leerkracht> Leerkrachten { get; set; }
-        public DbSet<School> Scholen { get; set; }
+        public DbSet<Foto> tblfoto { get; set; }
+        public DbSet<Gezin> tblgezin { get; set; }
+        public DbSet<Hoek> tblhoek { get; set; }
+        public DbSet<Klas> tblklas { get; set; }
+        public DbSet<Kleuter> tblkleuter { get; set; }
+        public DbSet<Leerkracht> tblleerkracht { get; set; }
+        public DbSet<School> tblschool { get; set; }
 
         private string connectionString;
 
@@ -24,10 +25,18 @@ namespace TestProjectMobieles.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!optionsBuilder.IsConfigured)
+            try
             {
-                optionsBuilder.UseSqlServer(connectionString);
+                if (!optionsBuilder.IsConfigured)
+                {
+                    optionsBuilder.UseSqlServer(connectionString);
+                }
             }
+            catch(Exception ex)
+            {
+                string x = ex.Message;
+            }
+            
         }
     }
 }
