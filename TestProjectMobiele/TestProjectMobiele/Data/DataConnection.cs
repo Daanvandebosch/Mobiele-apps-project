@@ -29,7 +29,7 @@ namespace TestProjectMobieles.Data
             {
                 if (!optionsBuilder.IsConfigured)
                 {
-                    optionsBuilder.UseSqlServer(connectionString);
+                    optionsBuilder.UseSqlite(connectionString);
                 }
             }
             catch(Exception ex)
