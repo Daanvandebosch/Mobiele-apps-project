@@ -34,6 +34,7 @@ namespace TestProjectMobiele.Droid
         public void RegisterTypes(IContainerRegistry container)
         {
             // Register any platform specific implementations
+            container.Register<IFileHelper, FileHelper>();
         }
     }
 }

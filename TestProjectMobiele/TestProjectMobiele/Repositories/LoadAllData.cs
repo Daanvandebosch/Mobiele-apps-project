@@ -36,7 +36,8 @@ namespace TestProjectMobiele
 
         public async Task<List<Kleuter>> LoadKleuters()
         {
-            return await dbContext.tblkleuter.ToListAsync();
+            List<Kleuter> kl = await dbContext.tblkleuter.ToListAsync();
+            return kl;
         }
 
         public async Task<List<Leerkracht>> LoadLeerkrachten()
@@ -47,6 +48,13 @@ namespace TestProjectMobiele
         public async Task<List<School>> LoadScholen()
         {
             return await dbContext.tblschool.ToListAsync();
+        }
+
+        public async Task<int> SaveItemAsync(Kleuter item)
+        {
+            await dbContext.tblkleuter.AddAsync(item);
+
+            return await dbContext.SaveChangesAsync();
         }
     }
 }

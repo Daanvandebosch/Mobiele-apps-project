@@ -16,9 +16,10 @@ namespace TestProjectMobieles.Data
 
         private string connectionString;
 
-        public DataConnection(string connectionString)
+        public DataConnection(IFileHelper fileHelper)
         {
-            this.connectionString = connectionString;
+            string databasePath = fileHelper.GetLocalFilePath("TodoSQLite.db3");
+            connectionString = string.Format("Filename={0}", databasePath);
 
             Database.EnsureCreated();
         }
@@ -29,7 +30,7 @@ namespace TestProjectMobieles.Data
             {
                 if (!optionsBuilder.IsConfigured)
                 {
-                    optionsBuilder.UseSqlServer(connectionString);
+                    optionsBuilder.UseSqlite(connectionString);
                 }
             }
             catch(Exception ex)
