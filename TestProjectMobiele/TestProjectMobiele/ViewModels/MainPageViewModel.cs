@@ -42,12 +42,12 @@ namespace TestProjectMobiele.ViewModels
                 SchoolID = 2,
                 FotoPad = "FotoString",
                 GezinsID = 4,
-                KlasID = 3
+                KlasID = 4
             };
             dataConnection.SaveItemAsync(k);
             Task<List<Kleuter>> kl = dataConnection.LoadKleuters();
         }
-        private async Task<int> test(Task<List<Kleuter>> k)
+        private async Task<int> Test(Task<List<Kleuter>> k)
         {
             List<Kleuter> kleu = await k;
             foreach (Kleuter kl in kleu)
