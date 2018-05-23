@@ -47,7 +47,7 @@ namespace TestProjectMobiele.ViewModels
             dataConnection.SaveItemAsync(k);
             Task<List<Kleuter>> kl = dataConnection.LoadKleuters();
         }
-        private async Task<int> test(Task<List<Kleuter>> k)
+        private async Task<int> Test(Task<List<Kleuter>> k)
         {
             List<Kleuter> kleu = await k;
             foreach (Kleuter kl in kleu)
